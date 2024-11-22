@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 'use client'
 import { motion } from 'framer-motion'
@@ -9,8 +10,22 @@ const testimonials = [
     name: 'Dr. Sarah Johnson',
     role: 'Chief Surgeon',
     quote: 'The quality of surgical instruments has been consistently excellent. Their customer service is outstanding.',
-    image: '/images/testimonial1.jpg'
+    image: '/images/doctest1.jpg'
   },
+  {
+    id: 2,
+    name: 'Dr. Michael Smith',
+    role: 'Head of Surgery',
+    quote: 'The instruments are durable and sterilize well. I highly recommend them.',
+    image: '/images/doctest2.jpg'
+  },
+  {
+    id: 3,
+    name: 'Dr. Emily Chen',
+    role: 'Pediatrician',
+    quote: 'The pediatric instruments are perfect for our young patients. They are easy to sterilize and use.',
+    image: '/images/doctest3.jpg'
+  }
   // ... more testimonials
 ]
 
@@ -40,6 +55,7 @@ export function Testimonials() {
             <div className="flex flex-col items-center text-center">
               <div className="w-20 h-20 rounded-full overflow-hidden mb-4">
                 {/* Add actual image here */}
+                <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} width={200} height={200} />
                 <div className="w-full h-full bg-gray-200" />
               </div>
               <p className="text-xl italic mb-6">"{testimonials[currentIndex].quote}"</p>

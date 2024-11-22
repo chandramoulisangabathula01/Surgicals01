@@ -1,6 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import { motion } from 'framer-motion'
 import { ShieldCheck, Truck, DollarSign } from 'lucide-react'
+
+interface WhyChooseUsProps {
+  whyChooseUs: string[]
+}
 
 const features = [
   {
@@ -20,9 +25,9 @@ const features = [
   }
 ]
 
-export function WhyChooseUs() {
+export const WhyChooseUs = ({ whyChooseUs }: WhyChooseUsProps) => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 px-10 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +45,7 @@ export function WhyChooseUs() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
+              className="overflow-hidden"
             >
               <div className="p-6">
                 <div className="flex items-center mb-4">
